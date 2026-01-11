@@ -1,13 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
-import Form from './FormValidation';
-
-
+import LoginForm from './LoginForm';
 
 function App() {
   return (
     <div className="App">
-      <Form/>
+      <LoginForm />
     </div>
   );
 }

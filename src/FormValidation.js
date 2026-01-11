@@ -60,7 +60,7 @@ function MyForm() {
         </div>
 
         <div>
-          <label>Email:</label>
+          <label>Email </label>
           <input
             type="email"
             name="email"
@@ -78,10 +78,30 @@ function MyForm() {
             onChange={handleChange}
             value={formData.password}
           />
+          <div>
+            <label>password:</label>
+            <input 
+            type='password'
+            name='password'
+            onChange={handleChange}
+            value={formData.pas}
+            >
+            </input>
+          </div>
           {errors.password && <p className="error">{errors.password}</p>}
         </div>
 
         <button type="submit">Submit</button>
+        <button type="onclick ">onclick</button>
+        <button type='clear'> clear</button>
+        <button type='onDelete'>delete</button>
+        <button type='onadd'>Adding </button>
+        <button type='onUpdate'>update </button>
+        <button type='onRemove'>remove </button>
+        <MyForm>
+          <h1>this is the form </h1>
+        <p>this is the form 0of validation using the library of react zustand. it will validate the form with authentication and verification.</p>
+        </MyForm>
       </form>
     </div >
   );
@@ -89,102 +109,4 @@ function MyForm() {
 
 export default MyForm;
 
-
-// import React, { useState } from 'react';
-
-// const MyForm: React.FC = () => {
-//   const [formData, setFormData] = useState({
-//     name: '',
-//     email: '',
-//     password: '',
-//   });
-
-//   const [formErrors, setFormErrors] = useState({
-//     name: '',
-//     email: '',
-//     password: '',
-//   });
-
-//   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-//     const { name, value } = e.target;
-//     setFormData({
-//       ...formData,
-//       [name]: value,
-//     });
-//   };
-
-//   const validateForm = () => {
-//     const errors: Record<string,  string> = {};
- 
-//     if (!formData.name.trim()) {
-//       errors.name = 'Name is required';
-//     }
-//     if (!formData.email.trim()) {
-//       errors.email = 'Email is required';
-//     } else if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i.test(formData.email)) {
-//       errors.email = 'Invalid email address';
-//     }
-//     if (!formData.password.trim()) {
-//       errors.password = 'Password is required';
-//     } else if (formData.password.length < 8) {
-//       errors.password = 'Password must be at least 8 characters';
-//     }
-
-//     setFormErrors(errors);
-
-//     return Object.keys(errors).length === 0;
-//   };
-
-//   const handleSubmit = (e: React.FormEvent) => {
-//     e.preventDefault();
-
-//     if (validateForm()) {
-//       console.log('Form submitted:', formData);
-//     }
-//   };
-
-//   return (
-//     <div>
-//       <h2>Form</h2>
-//       <form onSubmit={handleSubmit}>
-//         <div>
-//           <label htmlFor="name">Name:</label>
-//           <input
-//             type="text"
-//             id="name"
-//             name="name"
-//             value={formData.name}
-//             onChange={handleChange}
-//           />
-//           <span className="error">{formErrors.name}</span>
-//         </div>
-//         <div>
-//           <label htmlFor="email">Email:</label>
-//           <input
-//             type="email"
-//             id="email"
-//             name="email"
-//             value={formData.email}
-//             onChange={handleChange}
-//           />
-//           <span className="error">{formErrors.email}</span>
-//         </div>
-//         <div>
-//           <label htmlFor="password">Password:</label>
-//           <input
-//             type="password"
-//             id="password"
-//             name="password"
-//             value={formData.password}
-//             onChange={handleChange}
-//           />
-//           <span className="error">{formErrors.password}</span>
-//         </div>
-//         <button type="submit">Submit</button>
-//       </form>
-//     </div>
-//   );
-// };
-
-// export default MyForm;
 
